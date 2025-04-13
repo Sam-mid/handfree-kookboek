@@ -1,0 +1,192 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/* .camera en .recept secties */
+.camera, .recept {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px; /* Breedte beperken zodat de secties niet te groot zijn */
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Zorg ervoor dat de tekst binnen de secties mooi gecentreerd is */
+}
+
+/* Titel */
+h1 {
+    font-size: 2.5rem;
+    color: #388E3C;
+    margin: 0;
+}
+
+/* Button */
+button {
+    background-color: #A5D6A7;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #81C784;
+}
+
+/* Video-container */
+.videoView {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    background-color: #dcdcdc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Video en canvas */
+video {
+    display: block;
+    transform: rotateY(180deg);
+}
+
+#output_canvas {
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    transform: rotateY(180deg);
+}
+
+#output_canvas {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Stap tekst */
+.stap-tekst {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.stap-tekst h2 {
+    font-size: 1.5rem;
+    color: #388E3C;
+    margin: 0;
+}
+
+.stap-tekst h3 {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    color: #333;
+}
+
+.instructions {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Stap-afbeelding */
+.stap-image img {
+    width: 100%;
+    max-width: 400px;
+    border: 8px solid #A5D6A7;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+}
+
+/* Besturingselementen */
+.controls {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.controls button {
+    background-color: #387139;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.controls button:hover {
+    background-color: #81C784;
+}
+
+/* Stopwatch */
+#stopwatch {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #388E3C;
+    text-align: center;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#myimage {
+    display: none;
+}
+
+/* Stap verborgen */
+.step {
+    display: none; /* Verberg standaard de stappen */
+}
+
+.step.active {
+    display: block; /* Toon alleen de actieve stap */
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+
+    .camera,
+    .recept {
+        max-width: 100%;
+    }
+
+    .controls {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+

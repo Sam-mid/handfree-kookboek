@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handsfree kookboek</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+</head>
+
+<body>
+<section class="camera">
+    <h1>Handsfree kookboek</h1>
+    <button id="webcamButton">START WEBCAM</button>
+    <div class="videoView">
+        <div style="position: relative;">
+            <video id="webcam" style="position: absolute;" muted autoplay playsinline></video>
+            <canvas id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+            <div id="myimage">Sam</div>
+        </div>
+    </div>
+</section>
+
+<section class="recept">
+    <!-- Stap 1 -->
+    <div class="step" id="step-1">
+        <div class="stap-tekst">
+            <h2>Stap 1:</h2>
+            <h3>Kook de rijst.</h3>
+            <p><strong>INSTRUCTIES:</strong></p>
+            <p class="instructions">
+                Breng het bouillonblokje in het water aan de kook. Bereid hierin de rijst volgens de aanwijzingen op de verpakking. Giet af en laat afgedekt staan tot gebruik.
+            </p>
+        </div>
+        <div class="stap-image">
+            <img src="img/rice.jpg" alt="Kip bakken" />
+        </div>
+    </div>
+
+    <!-- Stap 2 -->
+    <div class="step" id="step-2">
+        <div class="stap-tekst">
+            <h2>Stap 2:</h2>
+            <h3>Snijd de kip de kip en grill.</h3>
+            <p><strong>INSTRUCTIES:</strong></p>
+            <p class="instructions">
+                Halveer ondertussen de kipfilets in de lengte zodat je 4 gelijke stukken hebt. Meng de olie met de burritokruiden en wat zout en schep om met de kip. Verhit de grillpan zonder olie of boter en gril de kip in 12 min. op middelhoog vuur goudbruin en gaar. Keer regelmatig. Neem uit de pan en trek met 2 vorken het vlees uit elkaar.
+            </p>
+        </div>
+        <div class="stap-image">
+            <img src="img/chicken.png" alt="Kip snijden" />
+        </div>
+    </div>
+
+    <!-- Stap 3 -->
+    <div class="step" id="step-3">
+        <div class="stap-tekst">
+            <h2>Stap 3:</h2>
+            <h3>Snijd de groenten.</h3>
+            <p><strong>INSTRUCTIES:</strong></p>
+            <p class="instructions">
+                Snijd de ui in dunne halve ringen. Schep om met 2 el vocht (per 6 stuks) uit de pot jalapeno’s. Halveer de avocado’s, verwijder de pitten en schep het vruchtvlees uit de schil. Prak grof en breng op smaak met peper en eventueel zout.
+            </p>
+        </div>
+        <div class="stap-image">
+            <img src="img/groenten.webp" alt="Groenten snijden" />
+        </div>
+    </div>
+
+    <!-- Stap 4 -->
+    <div class="step" id="step-4">
+        <div class="stap-tekst">
+            <h2>Stap 4:</h2>
+            <h3>Warm en vul de tortilla's.</h3>
+            <p><strong>INSTRUCTIES:</strong></p>
+            <p class="instructions">
+                Verwarm de tortillawraps volgens de aanwijzingen op de verpakking. Besmeer steeds 1 wrap in het midden in de breedte met 1 tl salsa, laat de randen vrij. Verdeel er 2 el bonenspread, 1 el sour cream, 1 el rijst, 2 el kip, 2 el avocado, 2 el cheddar, wat halve uienringen en wat jalapeno’s over.
+            </p>
+        </div>
+        <div class="stap-image">
+            <img src="img/tortilla.webp" alt="Tortilla vullen" />
+        </div>
+    </div>
+
+    <!-- Stap 5 -->
+    <div class="step" id="step-5">
+        <div class="stap-tekst">
+            <h2>Stap 5:</h2>
+            <h3>Rol de burrito op.</h3>
+            <p><strong>INSTRUCTIES:</strong></p>
+            <p class="instructions">
+                Vouw eerst de brede kant over de vulling en dan de zijkanten naar binnen en rol verder op. Maak zo de rest van de burrito’s. Snijd ze in grote stukken en serveer met de rest van de salsa.
+            </p>
+        </div>
+        <div class="stap-image">
+            <img src="img/folding.jpg" alt="Burrito oprollen" />
+        </div>
+    </div>
+
+    <!-- Stap 6 -->
+    <div class="step" id="step-6">
+        <div class="stap-tekst">
+            <h2>Stap 6:</h2>
+            <h3>Snijd de burrito en serveer.</h3>
+            <p><strong>INSTRUCTIES:</strong></p>
+            <p class="instructions">
+                Snijd de burrito doormidden en serveer met een schijfje limoen.
+            </p>
+        </div>
+        <div class="stap-image">
+            <img src="img/klaar.webp" alt="Afgeronde Burrito" />
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prev">👈</button>
+        <div id="stopwatch">
+            <p>⏱️</p>
+            <div id="timer">00:00</div>
+        </div>
+        <button id="next">👉</button>
+    </div>
+</section>
+</body>
+</html>
